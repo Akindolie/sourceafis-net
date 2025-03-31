@@ -11,10 +11,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-   // app.MapOpenApi();
+    app.UseHttpsRedirection();
 }
-
-app.UseHttpsRedirection();
 
 // Get the PORT assigned by Heroku
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
