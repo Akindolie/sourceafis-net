@@ -42,7 +42,14 @@ app.MapGet("/weatherforecast", () =>
 // Map controllers
 app.MapControllers();
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"An error occurred: {ex.Message}");
+}
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
