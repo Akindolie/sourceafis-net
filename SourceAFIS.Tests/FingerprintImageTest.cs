@@ -36,6 +36,9 @@ namespace SourceAFIS
         public void DecodeBmp() => AssertSimilar(TestResources.Bmp(), TestResources.Png());
 
         public static FingerprintImage Probe() => new FingerprintImage(TestResources.Probe());
+        public static FingerprintImage DevProbe() => new FingerprintImage(TestResources.DevProbe());
+        public static FingerprintImage DevCandidate() => new FingerprintImage(TestResources.DevCandidate());
+        public static FingerprintImage DevNonMatching() => new FingerprintImage(TestResources.DevNonMatching());
         public static FingerprintImage Matching() => new FingerprintImage(TestResources.Matching());
         public static FingerprintImage Nonmatching() => new FingerprintImage(TestResources.Nonmatching());
         public static FingerprintImage ProbeGray() => new FingerprintImage(332, 533, TestResources.ProbeGray());

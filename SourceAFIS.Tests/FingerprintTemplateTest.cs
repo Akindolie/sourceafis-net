@@ -11,6 +11,9 @@ namespace SourceAFIS
     public class FingerprintTemplateTest
     {
         public static FingerprintTemplate Probe() => new FingerprintTemplate(FingerprintImageTest.Probe());
+        public static FingerprintTemplate DevProbe() => new FingerprintTemplate(FingerprintImageTest.DevProbe());
+        public static FingerprintTemplate DevCandidate() => new FingerprintTemplate(FingerprintImageTest.DevCandidate());
+        public static FingerprintTemplate DevNonMatching() => new FingerprintTemplate(FingerprintImageTest.DevNonMatching());
         public static FingerprintTemplate Matching() => new FingerprintTemplate(FingerprintImageTest.Matching());
         public static FingerprintTemplate Nonmatching() => new FingerprintTemplate(FingerprintImageTest.Nonmatching());
         public static FingerprintTemplate ProbeGray() => new FingerprintTemplate(FingerprintImageTest.ProbeGray());
