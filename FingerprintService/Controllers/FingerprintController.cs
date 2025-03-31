@@ -14,12 +14,12 @@ public class FingerprintController : ControllerBase
         byte[] candidateImage = Convert.FromBase64String(data.Candidate);
 
         // Convert the byte arrays to fingerprintImage
-        FingerprintImage probeFingerprintImage => new FingerprintImage(probeImage);
-        FingerprintImage candidateFingerprintImage  => new FingerprintImage(candidateImage);
+        FingerprintImage probeFingerprintImage = new FingerprintImage(probeImage);
+        FingerprintImage candidateFingerprintImage  = new FingerprintImage(candidateImage);
 
         // Process images and create FingerprintTemplate objects
-        FingerprintTemplate probeTemplate => new FingerprintTemplate(probeFingerprintImage);
-        FingerprintTemplate candidateTemplate => new FingerprintTemplate(candidateFingerprintImage);
+        FingerprintTemplate probeTemplate = new FingerprintTemplate(probeFingerprintImage);
+        FingerprintTemplate candidateTemplate = new FingerprintTemplate(candidateFingerprintImage);
 
         var matcher = new FingerprintMatcher(probeTemplate);
         double score = matcher.Match(candidateTemplate);
@@ -31,6 +31,6 @@ public class FingerprintController : ControllerBase
 
 public class FingerprintData
 {
-    public string Probe { get; set; }
-    public string Candidate { get; set; }
+    public required string Probe { get; set; }
+    public required string Candidate { get; set; }
 }
