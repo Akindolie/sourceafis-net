@@ -4,8 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers(); // Add this line to register controllers
-//builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -16,6 +15,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Get the PORT assigned by Heroku
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");  // Ensure the app listens on the correct port
 
 var summaries = new[]
 {
@@ -37,7 +40,7 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast");
 
 // Map controllers
-app.MapControllers(); // Add this line to map controllers
+app.MapControllers();
 
 app.Run();
 
