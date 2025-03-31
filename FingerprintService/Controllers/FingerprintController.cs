@@ -31,6 +31,6 @@ public class FingerprintController : ControllerBase
 
 public class FingerprintData
 {
-    public required string Probe { get; set; }
-    public required string Candidate { get; set; }
+    public  string Probe { get; set; } = string.Empty;
+    public  string Candidate { get; set; } = string.Empty;
 }
