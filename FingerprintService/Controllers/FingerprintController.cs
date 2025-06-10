@@ -147,8 +147,8 @@ public class FingerprintController : ControllerBase
 
     private List<FingerprintTemplateWithFileName> LoadTemplatesByFingerCode(string fingerCode)
     {
-        if (templateCache.ContainsKey(fingerCode))
-            return templateCache[fingerCode];
+        // if (templateCache.ContainsKey(fingerCode))
+        //     return templateCache[fingerCode];
 
         string folderPath = Environment.GetEnvironmentVariable("FINGERPRINT_FOLDER_PATH")
                             ?? throw new Exception("FINGERPRINT_FOLDER_PATH is not set.");
@@ -182,7 +182,7 @@ public class FingerprintController : ControllerBase
             }
         }
 
-        templateCache[fingerCode] = list;
+        //templateCache[fingerCode] = list;
         return list;
     }
 
