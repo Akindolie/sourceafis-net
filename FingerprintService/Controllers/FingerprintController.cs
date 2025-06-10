@@ -100,8 +100,8 @@ public class FingerprintController : ControllerBase
             FingerprintTemplate probeTemplate = new FingerprintTemplate(new FingerprintImage(probeImage));
 
             var candidateTemplates = LoadTemplatesByFingerCode(data.FingerCode);
-            if (candidateTemplates.Count == 0)
-                return NotFound(new { Error = $"No fingerprint templates found for FingerCode '{data.FingerCode}'." });
+            // if (candidateTemplates.Count == 0)
+            //     return NotFound(new { Error = $"No fingerprint templates found for FingerCode '{data.FingerCode}'." });
 
             double highestScore = 0;
             FingerprintTemplateWithFileName? bestMatch = null;
