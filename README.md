@@ -22,7 +22,7 @@ Compares two base64-encoded fingerprint images.
   "probe": "base64-string",
   "candidate": "base64-string"
 }
-
+```
 ## 📦 Now with Docker Support!
 
 You can now build and run the API in a containerized environment:
